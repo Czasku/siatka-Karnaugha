@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Tabelki :D</title>
+
+		<style>
+			:root {
+				--grubosc: 2px;
+				--czerwony: rgb(207, 0, 0);
+				--zolty: rgb(216, 231, 11);
+				--niebieski: rgb(0, 200, 183);
+				--zielony: rgb(20, 203, 0);
+			}
+			.srodek,
+			table {
+				border-collapse: collapse;
+			}
+			td {
+				width: 40px;
+				height: 40px;
+				text-align: center;
+			}
+			.srodek {
+				border: 1.5px solid black;
+			}
+			textarea {
+				padding: 0;
+				padding-top: 1.75px;
+				padding-left: 7px;
+				margin: 0;
+				width: 25%;
+				height: 45%;
+				border: none;
+				resize: none;
+				text-align: centers;
+				font-size: 15px;
+			}
+			textarea.naglowek {
+				width: 70%;
+			}
+
+			.top_left_1 {
+				border-top: var(--grubosc) var(--czerwony) solid;
+				border-left: var(--grubosc) var(--czerwony) solid;
+			}
+			.top_right_1 {
+				border-top: var(--grubosc) var(--czerwony) solid;
+				border-right: var(--grubosc) var(--czerwony) solid;
+			}
+			.bottom_left_1 {
+				border-bottom: var(--grubosc) var(--czerwony) solid;
+				border-left: var(--grubosc) var(--czerwony) solid;
+			}
+			.bottom_right_1 {
+				border-bottom: var(--grubosc) var(--czerwony) solid;
+				border-right: var(--grubosc) var(--czerwony) solid;
+			}
+			.bottom_top_1 {
+				border-bottom: var(--grubosc) var(--czerwony) solid;
+				border-top: var(--grubosc) var(--czerwony) solid;
+			}
+			.left_right_1 {
+				border-left: var(--grubosc) var(--czerwony) solid;
+				border-right: var(--grubosc) var(--czerwony) solid;
+			}
+
+			.top_left_3 {
+				border-top: var(--grubosc) var(--niebieski) solid;
+				border-left: var(--grubosc) var(--niebieski) solid;
+			}
+			.top_right_3 {
+				border-top: var(--grubosc) var(--niebieski) solid;
+				border-right: var(--grubosc) var(--niebieski) solid;
+			}
+			.bottom_left_3 {
+				border-bottom: var(--grubosc) var(--niebieski) solid;
+				border-left: var(--grubosc) var(--niebieski) solid;
+			}
+			.bottom_right_3 {
+				border-bottom: var(--grubosc) var(--niebieski) solid;
+				border-right: var(--grubosc) var(--niebieski) solid;
+			}
+			.bottom_top_3 {
+				border-bottom: var(--grubosc) var(--niebieski) solid;
+				border-top: var(--grubosc) var(--niebieski) solid;
+			}
+			.left_right_3 {
+				border-left: var(--grubosc) var(--niebieski) solid;
+				border-right: var(--grubosc) var(--niebieski) solid;
+			}
+
+			.top_left_4 {
+				border-top: var(--grubosc) var(--zolty) solid;
+				border-left: var(--grubosc) var(--zolty) solid;
+			}
+			.top_right_4 {
+				border-top: var(--grubosc) var(--zolty) solid;
+				border-right: var(--grubosc) var(--zolty) solid;
+			}
+			.bottom_left_4 {
+				border-bottom: var(--grubosc) var(--zolty) solid;
+				border-left: var(--grubosc) var(--zolty) solid;
+			}
+			.bottom_right_4 {
+				border-bottom: var(--grubosc) var(--zolty) solid;
+				border-right: var(--grubosc) var(--zolty) solid;
+			}
+			.bottom_top_4 {
+				border-bottom: var(--grubosc) var(--zolty) solid;
+				border-top: var(--grubosc) var(--zolty) solid;
+			}
+			.left_right_4 {
+				border-left: var(--grubosc) var(--zolty) solid;
+				border-right: var(--grubosc) var(--zolty) solid;
+			}
+
+			.top_left_2 {
+				border-top: var(--grubosc) var(--zielony) solid;
+				border-left: var(--grubosc) var(--zielony) solid;
+			}
+			.top_right_2 {
+				border-top: var(--grubosc) var(--zielony) solid;
+				border-right: var(--grubosc) var(--zielony) solid;
+			}
+			.bottom_left_2 {
+				border-bottom: var(--grubosc) var(--zielony) solid;
+				border-left: var(--grubosc) var(--zielony) solid;
+			}
+			.bottom_right_2 {
+				border-bottom: var(--grubosc) var(--zielony) solid;
+				border-right: var(--grubosc) var(--zielony) solid;
+			}
+			.bottom_top_2 {
+				border-bottom: var(--grubosc) var(--zielony) solid;
+				border-top: var(--grubosc) var(--zielony) solid;
+			}
+			.left_right_2 {
+				border-left: var(--grubosc) var(--zielony) solid;
+				border-right: var(--grubosc) var(--zielony) solid;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<td>
+					<textarea class="naglowek">A B</textarea>
+				</td>
+				<td>
+					<textarea class="naglowek">00</textarea>
+				</td>
+				<td>
+					<textarea class="naglowek">01</textarea>
+				</td>
+				<td>
+					<textarea class="naglowek">11</textarea>
+				</td>
+				<td>
+					<textarea class="naglowek">10</textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<textarea class="naglowek">1</textarea>
+				</td>
+				<td class="srodek top_left_1 bottom_top_1 left_right_3 top_left_3">
+					<textarea></textarea>
+				</td>
+				<td class="srodek bottom_top_1">
+					<textarea></textarea>
+				</td>
+				<td class="srodek bottom_top_1 left_right_4 top_left_4">
+					<textarea></textarea>
+				</td>
+				<td class="srodek bottom_top_1 top_right_1">
+					<textarea></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea class="naglowek"></textarea>
+				</td>
+				<td class="srodek left_right_3">
+					<textarea></textarea>
+				</td>
+				<td class="srodek">
+					<textarea></textarea>
+				</td>
+				<td class="srodek left_right_4">
+					<textarea></textarea>
+				</td>
+				<td class="srodek">
+					<textarea></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea class="naglowek"></textarea>
+				</td>
+				<td class="srodek top_left_2 bottom_top_2 left_right_3">
+					<textarea></textarea>
+				</td>
+				<td class="srodek bottom_top_2">
+					<textarea></textarea>
+				</td>
+				<td class="srodek bottom_top_2 left_right_4">
+					<textarea></textarea>
+				</td>
+				<td class="srodek top_right_2 bottom_top_2">
+					<textarea></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea class="naglowek"></textarea>
+				</td>
+				<td class="srodek left_right_3 bottom_left_3">
+					<textarea></textarea>
+				</td>
+				<td class="srodek">
+					<textarea></textarea>
+				</td>
+				<td class="srodek left_right_4 bottom_left_4">
+					<textarea></textarea>
+				</td>
+				<td class="srodek">
+					<textarea></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td><textarea></textarea></td>
+				<td><textarea></textarea></td>
+				<td><textarea></textarea></td>
+				<td><textarea></textarea></td>
+				<td><textarea></textarea></td>
+				<td id="nazwa">
+					<textarea>Y</textarea>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
