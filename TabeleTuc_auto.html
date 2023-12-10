@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Uwielbiam tabelki</title>
+
+		<style>
+			:root {
+				--rozmiar: 100px;
+			}
+
+			#row,
+			#col {
+				margin-top: 5px;
+			}
+			.blok {
+				width: var(--rozmiar);
+				height: var(--rozmiar);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 200%;
+				margin: 0 0 -2.5px -2.5px;
+			}
+			.siatka {
+				border: 2.5px solid black;
+				box-sizing: border-box;
+			}
+
+			.wielkosc_tab {
+				width: 25%;
+			}
+
+			.main,
+			.kontrole {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.panel_sterowania {
+				flex-flow: column;
+				width: 75%;
+			}
+			.poleSiatki {
+				width: 90%;
+				height: 90%;
+				border: none;
+				text-align: center;
+				font-size: 100%;
+			}
+
+			.grupy {
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="kontrole">
+			<div class="wielkosc_tab">
+				<label for="row">Liczba wierszy</label>
+				<select id="row" onChange="tabela()">
+					<option value="4">4</option>
+					<option value="2">2</option>
+					<option value="8">8</option>
+					<option value="16">16</option>
+				</select>
+				<br />
+
+				<label for="col">Liczba kolumn</label>
+				<select id="col" onChange="tabela()">
+					<option value="4">4</option>
+					<option value="2">2</option>
+					<option value="8">8</option>
+					<option value="16">16</option>
+				</select>
+
+				<p id="test"></p>
+			</div>
+			<div class="panel_sterowania">
+		</div>
+		<div class="main"></div>
+
+		<script>
+			document.onload = tabela();
+
+			function jakaTablica(ile, i) {
+				const tab_2 = ["0", "1"];
+				const tab_4 = ["00", "01", "11", "10"];
+				const tab_8 = ["000",
+				 "001", "011", "010", "110", "111", "101", "100"];
+				const tab_16 = [
+					"0000",
+					"0001",
+					"0011",
+					"0010",
+					"0110",
+					"0111",
+					"0101",
+					"0100",
+					"1100",
+					"1101",
+					"1111",
+					"1110",
+					"1010",
+					"1011",
+					"1001",
+					"1000",
+				];
+				switch (ile) {
+					case 2:
+						return tab_2[i];
+						break;
+					case 4:
+						return tab_4[i];
+						break;
+					case 8:
+						return tab_8[i];
+						break;
+					case 16:
+						return tab_16[i];
+						break;
+				}
+			}
+
+			function tabela() {
+				const main = document.querySelector(".main");
+				const rozmiar = 100;
+
+				main.innerHTML = "";
+
+				let wiersze = parseInt(document.getElementById("row").value);
+				let kolumny = parseInt(document.getElementById("col").value);
+
+				switch (kolumny) {
+					case 2:
+						main.style.width = rozmiar * (kolumny + 1) + "px";
+						break;
+					case 4:
+						main.style.width = rozmiar * (kolumny + 1) + "px";
+						break;
+					case 8:
+						main.style.width = rozmiar * (kolumny + 1) + "px";
+						break;
+					case 16:
+						main.style.width = rozmiar * (kolumny + 1) + "px";
+						break;
+				}
+
+				wiersze = wiersze + 2;
+				kolumny = kolumny + 1;
+
+				for (let i = 0; i < wiersze; i++) {
+					for (let j = 0; j < kolumny; j++) {
+						const div = document.createElement("div");
+						const pole = document.createElement("input");
+						pole.setAttribute("type", "text");
+						pole.classList.add("poleSiatki");
+
+						if (i == 0 && j == 0) {
+							div.classList.add("blok");
+							document.querySelector(".main").appendChild(div);
+							div.appendChild(pole);
+						} else if (i == 0) {
+							div.classList.add("blok");
+							div.innerHTML = jakaTablica(kolumny - 1, j - 1);
+							document.querySelector(".main").appendChild(div);
+						} else if (i == wiersze - 1) {
+							div.classList.add("blok");
+							document.querySelector(".main").appendChild(div);
+							div.appendChild(pole);
+						} else if (j == 0) {
+							div.classList.add("blok");
+							div.innerHTML = jakaTablica(wiersze - 2, i - 1);
+							document.querySelector(".main").appendChild(div);
+						} else {
+							div.classList.add("blok", "siatka");
+							pole.value = 1;
+							document.querySelector(".main").appendChild(div);
+							div.appendChild(pole);
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
